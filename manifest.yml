@@ -1,0 +1,28 @@
+display_information:
+  name: slackbot-demo
+  description: SlackBot demo
+  background_color: "#004492"
+features:
+  app_home:
+    home_tab_enabled: false
+    messages_tab_enabled: true
+    messages_tab_read_only_enabled: true
+  bot_user:
+    display_name: Slackbot demo
+    always_online: true
+  slash_commands:
+    - command: /hello
+      url: <your-domain-url>/slack/command
+      description: Hello World
+      should_escape: false
+oauth_config:
+  redirect_urls:
+    - <your-domain-url>/slack/oauth_redirect
+  scopes:
+    bot:
+      - chat:write
+      - commands
+settings:
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
